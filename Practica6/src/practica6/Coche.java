@@ -34,4 +34,19 @@ public class Coche {
 		}
 		return resultado;
 	}
+	
+	public String metodoGasolina(String modelo, String fabricante) {
+		String res = "es un " + fabricante + " " + modelo + " y gasta 1,337 euros por litro.";
+		return res;
+	}
+	
+	public String metodoDiesel(String modelo, String fabricante) {
+		String res = "es un " + fabricante + " " + modelo + " y gasta 1,052 euros por litro.";
+		return res;
+	}
+
+	public String metodoHibrido(String modelo, String fabricante) {
+		String res = "es un " + fabricante + " " + modelo + " y no necesita combustible.";
+		return res;
+	}
 }
