@@ -7,7 +7,14 @@ package practica6;
  */
 
 public class Coche {
-	private static final String COCHE_CON_MATRICULA = "El coche con matricula ";
+	public static final String COCHE_MATRICULA = "El coche con matricula ";
+
+	private static final String GASTO_HIBRIDO = " y no necesita combustible.";
+
+	public static final String GASTO_DIESEL = " y gasta 1,052 euros por litro.";
+
+	public static final String GASTO_GASOLINA = " y gasta 1,337 euros por litro.";
+
 	
 	String matricula;
 	String combustible;
@@ -48,13 +55,13 @@ public class Coche {
 	public String metodoCombustibleCoche() {
 		String resultado = "";
 		if (combustible == "Gasolina") {
-			resultado += COCHE_CON_MATRICULA + " " + matricula + " " + metodoGasolina(modelo, fabricante);
+			resultado += COCHE_MATRICULA + " " + matricula + " " + metodoGasolina(modelo, fabricante);
 		} else if (combustible == "Diesel") {
-			resultado += COCHE_CON_MATRICULA + " " + matricula + " " + metodoDiesel(modelo, fabricante);
+			resultado += COCHE_MATRICULA + " " + matricula + " " + metodoDiesel(modelo, fabricante);
 		} else if (combustible == "Híbrido") {
-			resultado += COCHE_CON_MATRICULA + " " + matricula + " " + metodoHibrido(modelo, fabricante);
+			resultado += COCHE_MATRICULA + " " + matricula + " " + metodoHibrido(modelo, fabricante);
 		} else {
-			resultado += COCHE_CON_MATRICULA + " " + matricula + " no dispone de información";
+			resultado += COCHE_MATRICULA + " " + matricula + " no dispone de información";
 		}
 		return resultado;
 	}
@@ -67,7 +74,7 @@ public class Coche {
 	 */
 	
 	public String metodoGasolina(String modelo, String fabricante) {
-		String res = "es un " + fabricante + " " + modelo + " y gasta 1,337 euros por litro.";
+		String res = "es un " + fabricante + " " + modelo + GASTO_GASOLINA;
 		return res;
 	}
 	
@@ -79,7 +86,7 @@ public class Coche {
 	 */
 	
 	public String metodoDiesel(String modelo, String fabricante) {
-		String res = "es un " + fabricante + " " + modelo + " y gasta 1,052 euros por litro.";
+		String res = "es un " + fabricante + " " + modelo + GASTO_DIESEL;
 		return res;
 	}
 	
@@ -91,7 +98,7 @@ public class Coche {
 	 */
 	
 	public String metodoHibrido(String modelo, String fabricante) {
-		String res = "es un " + fabricante + " " + modelo + " y no necesita combustible.";
+		String res = "es un " + fabricante + " " + modelo + GASTO_HIBRIDO;
 		return res;
 	}
 }
